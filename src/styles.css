@@ -1,0 +1,101 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #181824;
+}
+
+.todo-app {
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  color: #efd9f5;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 10px;
+  font-family: sans-serif;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.add-input {
+  border: none;
+  outline: none;
+  padding: 15px  20px 15px 35px;
+  border-radius: 3px;
+  background-color: #292b40;
+  color: #efd9f5;
+  width: 100%;
+}
+
+.add-input::placeholder {
+  color: #8989a1;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  background-color: #292b40;
+  border-radius: 3px;
+  color: #efd9f5;
+  overflow-y: auto;
+  max-height: 400px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.16);
+}
+
+.todo-list div {
+  padding: 15px  20px 15px 35px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.todo-list div:not(:last-child) {
+  border-bottom: 1px solid #313349;
+}
+
+.input-container::before, .todo-list div::before {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  content: '';
+  font-size: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #313349;
+  position: absolute;
+  left: 0;
+  margin: 5px;
+}
+
+.todo-list div.done {
+  text-decoration: line-through;
+  color: #8989a1;
+}
+
+.todo-list div.done::before {
+  content: '✔';
+  color: #efd9f5;
+  background: linear-gradient(120deg, #78bbf9 30%, #292b40) ;
+}
